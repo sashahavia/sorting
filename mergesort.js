@@ -20,13 +20,14 @@ function merge(arr1, arr2){
       right++;
     }
   }
-  for(left; left < arr1.length; left++){
-    result.push(arr1[left]);
-  }
-  for(right; right < arr2.length; right++){
-    result.push(arr2[right]);
-  }
-  return result;
+  // for(left; left < arr1.length; left++){
+  //   result.push(arr1[left]);
+  // }
+  // for(right; right < arr2.length; right++){
+  //   result.push(arr2[right]);
+  // }
+  // return result;
+  return result.concat(arr1.slice(left)).concat(arr2.slice(right));
 }
 
 function mergeSort(array) {
