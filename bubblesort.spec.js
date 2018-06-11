@@ -1,3 +1,9 @@
+describe('Bubble Sort', function(){
+  it('handles an empty array', function(){
+    expect( bubbleSort([]) ).toEqual( [] );
+  });
+});
+
 describe('Jasmine tests for a bubble sort implementation', function() {
 
   it ('- should sort a simple integer list', function() {
