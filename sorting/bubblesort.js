@@ -1,5 +1,5 @@
 function bubbleSort(array) {
-// array = [17, 43, 216, 3, 9, 27]
+  // array = [17, 43, 216, 3, 9, 27]
   /* your code here */
   // let swapped;
   // do {
@@ -18,14 +18,16 @@ function bubbleSort(array) {
   let length = array.length;
   do {
     swapped = false;
-  for(let i = 0; i < length; i++){ // 216 27
-    if(array[i] > array[i + 1]){
-      let temp = array[i]; // 216
-      array[i] = array[i + 1]; // array[4] = 27
-      array[i + 1] = temp; // array[5] = 216
+    for (let i = 0; i < length; i++) {
+      // 216 27
+      if (array[i] > array[i + 1]) {
+        let temp = array[i]; // 216
+        array[i] = array[i + 1]; // array[4] = 27
+        array[i + 1] = temp; // array[5] = 216
+      }
+      length--;
     }
-    length--;
-  }
-  return array;
-  } while(swapped);
+    return array;
+  } while (swapped);
 }
+//test
