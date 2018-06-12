@@ -1,7 +1,7 @@
 function split(wholeArray) {
 
   /* your code here to define the firstHalf and secondHalf arrays */
-  let middle = Math.floor(wholeArray.length/2);
+  let middle = wholeArray.length/2;
   let firstHalf = wholeArray.slice(0, middle);
   let secondHalf = wholeArray.slice(middle);
   return [firstHalf, secondHalf];
@@ -20,14 +20,14 @@ function merge(arr1, arr2){
       right++;
     }
   }
-  // for(left; left < arr1.length; left++){
-  //   result.push(arr1[left]);
-  // }
-  // for(right; right < arr2.length; right++){
-  //   result.push(arr2[right]);
-  // }
-  // return result;
-  return result.concat(arr1.slice(left)).concat(arr2.slice(right));
+  for(; left < arr1.length; left++){
+    result.push(arr1[left]);
+  }
+  for(; right < arr2.length; right++){
+    result.push(arr2[right]);
+  }
+  return result;
+  // return result.concat(arr1.slice(left)).concat(arr2.slice(right));
 }
 
 function mergeSort(array) {

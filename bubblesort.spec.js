@@ -1,3 +1,16 @@
+'use strict';
+
+const numerically = function (a, b) { return a - b; }
+
+const generateArray = function (size, lower, upper) {
+  const randomArray = [];
+  while (size--) {
+    let randomNum = Math.floor(lower + Math.random() * upper);
+    randomArray.push(randomNum);
+  }
+  return randomArray;
+}
+
 describe('Bubble Sort', function(){
   it('handles an empty array', function(){
     expect( bubbleSort([]) ).toEqual( [] );
@@ -44,5 +57,13 @@ describe('Jasmine tests for a bubble sort implementation', function() {
     expect(sorted[5]).toEqual('weasel');
     expect(sorted.length).toEqual(6);
   });
+
+  for (let i = 2; i < 103; i += 20) {
+    it('sorts an array of ' + i + ' random items', function(){
+      const arr = generateArray(i, 0, 100);
+      const sorted = arr.slice(0).sort(numerically);
+      expect( bubbleSort(arr) ).toEqual( sorted );
+    });
+  }
 
 });
